@@ -1,7 +1,8 @@
 function shownote(event) {
+  console.log("shownote")
   event.preventDefault();
   var id = $(this).attr("value");
-  $("#addnote").fadeIn(300).css("display", "flex");
+  $("#addnoteModal").fadeIn(300).css("display", "flex");
   $("#add-note").attr("value", id);
   $.get("/" + id, function(data) {
     $("#article-title").text(data.title);
@@ -17,13 +18,14 @@ function shownote(event) {
 
 function addnote(event) {
   event.preventDefault();
+  console.log(id)
   var id = $(this).attr("value");
   var obj = {
     title: $("#note-title").val().trim(),
     body: $("#note-body").val().trim()
   };
   $.post("/note/" + id, obj, function(data) {
-    window.location.href = "/saved";
+    window.location.href = `/saved` ;
   });
 }
 
@@ -42,5 +44,5 @@ $(document).on("click", ".addnote-button", shownote);
 $(document).on("click", "#add-note", addnote);
 $(".status").hover(changestatus, changeback);
 $("#close-note").on("click", function() {
-  $("#addnote").fadeOut(300);
+  $("#addnoteModal").fadeOut(300);
 });

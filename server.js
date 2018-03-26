@@ -65,6 +65,7 @@ app.get("/", function(req, res) {
 
 app.get("/scrape", function(req, res) {
   request("https://www.npr.org/sections/news/", function(error, response, html) {
+    console.log("i am in scrape")
     var $ = cheerio.load(html);
     var result = {};
     $("article.item.has-image").each(function(i, element) {
@@ -92,6 +93,7 @@ app.get("/scrape", function(req, res) {
 });
 
 app.get("/saved", function(req, res) {
+  console.log("in saved Route")
   Article.find({issaved: true}, null, {sort: {created: -1}}, function(err, data) {
     if(data.length === 0) {
       res.render("placeholder", {message: "You have not saved any articles yet. Try to save some delicious news by simply clicking \"Save Article\"!"});
@@ -150,8 +152,9 @@ app.post("/note/:id", function(req, res) {
 });
 
 app.get("/note/:id", function(req, res) {
+  console.log("i am in the note/id")
   var id = req.params.id;
   Article.findById(id).populate("note").exec(function(err, data) {
-    res.send(data.note);
+    res.send(data.note.body);
   })
 })

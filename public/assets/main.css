@@ -22,14 +22,15 @@ header form {
 
 header {
 	position: fixed;
-	left: 0;
-	top: 0;
-	display: block;
-	width: 100%;
-	height: 70px;
-	box-shadow: 0 0 10px #aaa;
-	background-color: #7a91a8;
-	opacity: 0.9;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 0 10px #aaa;
+    background-color: #7a91a8;
+    opacity: 0.9;
+    background-color: #eb9a07;
 }
 
 header button {
@@ -42,15 +43,15 @@ header button {
 }
 
 #all-articles {
-	background-color: #999;
+	background-color: #225890;
 }
 
 #saved-articles {
-	background-color: #aaa;
+	background-color: #049d01;
 }
 
 #refresh-articles {
-	background-color: #bbb;
+	background-color: #d04444;
 }
 
 #all-articles:hover, #saved-articles:hover, #refresh-articles:hover {
@@ -77,13 +78,14 @@ header button {
 
 #sitename {
 	float: left;
-	padding: 15px 11px;
-	height: 100%;
-	background-color: #92afcc;
-	font-size: 23px;
-	font-weight: bold;
-	color: #fff;
-	opacity: 0.7;
+    padding: 15px 11px;
+    height: 100%;
+    background-color: #92afcc;
+    font-size: 23px;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0.7;
+    background-color: #eda333;
 }
 
 #cover {
@@ -148,7 +150,7 @@ header button {
 	background-color: #fff;
 }
 
-#addnote {
+#addnoteModal {
 	display: none;
 	justify-content: center;
 	align-items: center;
@@ -224,16 +226,15 @@ header button {
 }
 
 footer {
-	position: fixed;
 	bottom: 0;
-	left: 0;
-	padding: 10px;
-	width: 100%;
-	text-align: center;
-	background-color: #aaa;
-	color: #ddd;
-	font-size: 15px;
-	border-top: 8px solid #3e9cfc;
-	opacity: 0.7;
-	z-index: 3;
+    left: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: #aaa;
+    color: #ddd;
+    font-size: 15px;
+    border-top: 8px solid #3e9cfc;
+    opacity: 0.7;
+    z-index: 3;
 }
